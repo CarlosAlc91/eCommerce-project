@@ -114,6 +114,20 @@ button {
   cursor: pointer;
 }
 
+/* GLOBAL */
+
+.section {
+  padding: var(--sp-2) o var(--sp-1);
+}
+
+.section--title, 
+.container {
+  max-width: 1024px;
+  margin: 0 1rem;
+
+}
+
+
 /* LOADER */
 .loader {
   position: fixed;
@@ -198,4 +212,71 @@ button {
   100% {
     box-shadow: 0.04em -0.04em 0 0.02em currentcolor;
   }
+}
+
+
+/* HEADER 
+* FIRST WE'RE WORKING MOBILE FIRST
+*/
+
+.header {
+  /* for mobile devices is recomended that header is at the bottom */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-heigth);
+  background-color: var(--bg-color);
+  z-index: var(--z-fixed);
+  box-shadow: 0 0 10px #000;
+}
+
+/* NAVIGATION BAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* rules applies from 0 to the width I specify */
+@media (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    bottom: var(--header-heigth);
+    left: 0;
+    width: 100%;
+    height: calc(max-content - var(--header-heigth));
+    padding: var(--sp-3) 0 var(--sp-2);
+    background-color: var(--bg-color);
+    z-index: var(--z-fixed);
+    transition: left .5s ease-in-out;
+  }
+}
+
+/* CLOSE BUTTON */
+.nav__menu .btn--close {
+  position: absolute;
+  top: var(--sp-0-75);
+  right: var(--sp-0-75);
+  /* border: 1px solid; */
+  width: var(--sp-2);
+  height: var(--sp-2);
+  font-size: var(--medium-font);
+  z-index: var(--z-fixed);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* NAVIGATION LINKS */
+.nav__link {
+  display: flex;
+  align-items: center;
+  padding: var(--sp-0-5) var(--sp-1);
+  color: var(--text-color);
+  transition: color .3s ease-in-out;
+}
+
+.nav__link:hover {
+  color: var(--primary-color);
 }
