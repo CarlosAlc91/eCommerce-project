@@ -144,6 +144,19 @@ button {
   cursor: pointer;
 }
 
+/* *GLOBAL */
+.section {
+  /* top, left-right, bottom */
+  padding: var(--sp-2) 0 var(--sp-1);
+}
+
+.section--title,
+.container {
+  max-width: 1024px;
+  /* small devices top-bottom, left-right*/
+  margin: 0 1rem;
+}
+
 /* *STYLING LOADER */
 .loader {
   /* loader will fit the full screen and if user scrolls down, loader will remain with user's pointer*/
@@ -190,3 +203,162 @@ button {
     opacity: 0;
   }
 }
+
+/* *MOBILE FIRST */
+/* HEADER */
+.header {
+  /* header scrolls with user */
+  position: fixed;
+  /* starts bottom-left */
+  bottom: 0;
+  left: 0;
+  /* full width */
+  width: 100%;
+  background-color: var(--bg-color);
+  z-index: var(--z-fixed);
+  /* no scrolls horizontally nor vertically, 10px for blur and color */
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 10%);
+}
+
+/* styling nav */
+.nav {
+  /* height: var(--header-height); from .header */
+  /* nav will have this heigth */
+  height: var(--header-height);
+  /* position buttons next to each other */
+  display: flex;
+  /* generates space between elements */
+  justify-content: space-between;
+  /* align buttons at center-horizontally */
+  align-items: center;
+}
+
+/* *NAV LOGO */
+.nav__logo {
+  /*  */
+  display: flex;
+  /* align button at center-horizontally */
+  align-items: center;
+}
+
+/* *LOGO ICON */
+/* icon resizes */
+.logo--icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary-color);
+}
+
+/* nav menu */
+/* max width, 0px up to 768px everything changed here will be erased at 769px*/
+@media (max-width: 768px) {
+  .nav__menu {
+    /* this menu will scrolls with user */
+    position: fixed;
+    /* this menu will appear upwards */
+    bottom: var(--header-height);
+    /* it will start from left */
+    left: -100%;
+    /* it will fit full width */
+    width: 100%;
+    /* calculated value, it will increase depending on its max content */
+    /* max-content (max width) and then its var(--header-height) */
+    height: calc(max-content - var(--header-height));
+    /* padding only to elements top, sides, bottom*/
+    /* this padding helps to get the menu out of the button */
+    padding: var(--sp-3) 0 var(--sp-2);
+    background-color: var(--bg-color);
+    z-index: var(--z-fixed);
+    /* menu will appear from left so cart can appear from right*/
+    /* appear from left with .5secons and ease in out (entrada por salida) */
+    transition: left 0.5s ease-in-out;
+  }
+}
+
+/* *STYLING CLOSE BUTTON */
+.nav__menu .btn--close {
+  position: absolute;
+  /* it will be separated a bit from top */
+  top: var(--sp-0-75);
+  /* it will be separated a bit from right */
+  right: var(--sp-0-75);
+  /* border: 1px solid; */
+  width: var(--sp-2);
+  height: var(--sp-2);
+  font-size: var(--medium-font);
+  z-index: var(--z-fixed);
+  /* centered icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* *STYLING LINKS START AND PRODUCTS */
+/* links are inline elements */
+/* styling so they can fit full width */
+.nav__link {
+  display: flex;
+  /*completely centered-vertically*/
+  align-items: center;
+  /* padding bottom-right, letf-right */
+  padding: var(--sp-0-75) var(--sp-1);
+  color: var(--text-color);
+  /* transiton to change color when user hovers cursor */
+  transition: color 0.3s ease-in-out;
+}
+
+/* transiton to change color when user hovers cursor */
+.nav__link:hover {
+  color: var(--primary-color);
+}
+
+/* *NAV BUTTONS */
+.nav__buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+/* *BUTTONS ICONS */
+.nav__btn i {
+  /* increase font size */
+  font-size: 1.5rem;
+}
+
+/* *CART BUTTON */
+/* btn--cart and notification will remain together */
+/* position relative, bag backwards */
+.btn--cart {
+  position: relative;
+}
+
+.notify {
+  /* position absolute, notification will be in front of the bag */
+  position: absolute;
+  /* top and right position of the notification */
+  top: -7px;
+  right: -12px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  font-size: var(--tiny-font);
+  color: var(--bg-color);
+  /* button centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  /* button will desapear and something is added, button appears*/
+  opacity: 0;
+  visibility: hidden;
+  /* transition will be appllied to opacity and visibility */
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* *SHOW MENU */
+/* this class will allow us to show button */
+.show--menu {
+  left: 0;
+}
+
+/* *NOTIFICATION */
