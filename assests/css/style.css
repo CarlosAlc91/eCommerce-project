@@ -351,7 +351,7 @@ button {
   /* button will desapear and something is added, button appears*/
   opacity: 0;
   visibility: hidden;
-  /* transition will be appllied to opacity and visibility */
+  /* transition will be appllied to property opacity and visibility */
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
