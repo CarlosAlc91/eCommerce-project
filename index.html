@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,7 @@
     />
     <!-- BOX ICONS -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
     <!-- STYLES SHEET -->
@@ -27,5 +27,55 @@
         <span></span>
       </div>
     </div>
+
+    <!-- HEADER -->
+    <header class="header">
+      <!-- NAVEGATION -->
+      <nav class="nav container">
+        <!-- LOGO -->
+        <a href="#" class="nav__logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48.92 56.48"
+            class="logo--icon"
+          >
+            <path
+              fill="currentColor"
+              d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z"
+            ></path>
+          </svg>
+        </a>
+        <!-- NAV MENU -->
+        <div class="nav__menu">
+          <!-- CLOSE BUTTON -->
+          <button type="button" class="nav__btn btn--close">
+            <i class="bx bx-x"></i>
+          </button>
+          <!-- NAVIGATION LIST -->
+          <ul class="nav__list">
+            <li class="nav__items">
+              <a href="#" class="nav__link">Start</a>
+            </li>
+            <li class="nav__items">
+              <a href="#" class="nav__link">Products</a>
+            </li>
+          </ul>
+        </div>
+        <!-- NAV BUTTONS -->
+        <div class="nav__buttons">
+          <!-- CART -->
+          <button type="button" class="nav__btn btn--cart">
+            <i class="bx bxs-shopping-bag"></i>
+            <!-- notification when a product is added to the cart -->
+            <span class="notify">0</span>
+          </button>
+
+          <!-- MENU -->
+          <button type="button" class="nav__btn btn--menu">
+            <i class="bx bx-grid-alt"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
   </body>
 </html>
