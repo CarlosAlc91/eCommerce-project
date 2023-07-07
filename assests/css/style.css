@@ -1,0 +1,145 @@
+/* *RESETING STYLES */
+
+/* *GLOBAL SCOOPE */
+:root {
+  /* for mobile devices */
+  --header-height: 60px;
+  --primary-color: hsl(354, 78%, 60%);
+  --body-color: hsl(206, 4%, 97%);
+  --text-color: hsl(0, 0%, 20%);
+  --title-color: hsl(0, 0%, 10%);
+  --bg-color: hsl(0, 0%, 100%);
+  --card-color: hsl(0, 0%, 90%);
+
+  /* fonts */
+  --body-font: "Open Sans", sans-serif;
+  --title-font: "Poppins", sans-serif;
+
+  /* *FONT SIZES */
+  --big-font: 2rem;
+  --medium-font: 1.5rem;
+  --normal-font: 1rem;
+  --small-font: 0.8rem;
+  --tiny-font: 0.75rem;
+
+  /* *FONT-THICKNESS */
+  --font-bold: 700;
+  --font-medium: 600;
+  --font-normal: 400;
+  --font-tiny: 300;
+
+  /* *MARGINS AND PADDING */
+  --sp-0-5: 0.5rem;
+  --sp-0-75: 0.75rem;
+  --sp-1: 1rem;
+  --sp-1-5: 1.5rem;
+  --sp-2: 2rem;
+  --sp-2-5: 2.5rem;
+  --sp-3: 3rem;
+
+  /* *Z-INDEX */
+  /* to be used in nav bar */
+  /* when user scrolls down, nav bar will stay over elements*/
+  --z-fixed: 100;
+  /* modal, elements will be in front of nav bar */
+  --z-modal: 200;
+}
+
+/* *when devices have a min width of 992px everything inside root's variable will increase their size automatically */
+@media (min-width: 992px) {
+  :root {
+    --big-font: 2.5rem;
+    --medium-font: 2rem;
+    --normal-font: 1.25rem;
+    --small-font: 1rem;
+    --tiny-font: 0.8rem;
+  }
+}
+
+/* *CONFIGURING HTML'S AND BODY'S DEFAULT PROPERTIES */
+html,
+body {
+  /* full document heigth will be applied */
+  height: 100%;
+}
+
+/* *STYLING HTML */
+html {
+  /* font size */
+  font-size: 16px;
+  /* line spacing DO NOT USE px*/
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  /* alternative box mode */
+  box-sizing: border-box;
+}
+
+/* *UNIVERSAL SELECTOR */
+/* there are properties which do not inherit */
+*,
+*::before,
+*::after {
+  /* all elements inherit the box model */
+  box-sizing: inherit;
+  /* margin and padding removed */
+  margin: 0;
+  padding: 0;
+}
+
+/* *RESETING BUTTONS, INPUTS, TEXTAREAS */
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font);
+}
+
+/* *SETTING BODY FONTS */
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font);
+  font-weight: var(--font-normal);
+  color: var(--text-color);
+  background-color: var(--body-color);
+}
+
+/* *SETTING LINKS OR ANCHORS */
+a {
+  text-decoration: none;
+}
+
+/* *TITLES OR ALL H's */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--title-font);
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+
+/* *SETTING ULs AND OLs */
+ul,
+ol {
+  list-style: none;
+}
+
+/* *SETTING IMAGES */
+img {
+  /* will fit the its full dimentios and takes the width of its father's width */
+  max-width: 100%;
+  height: auto;
+}
+
+/* *SETTING BUTTONS */
+button {
+  border: none;
+  outline: none;
+  /* transparent 'cause we can change its color sooner or later */
+  background-color: transparent;
+  /* if a user selects a button it wont highlight */
+  user-select: none;
+  cursor: pointer;
+}
