@@ -466,6 +466,67 @@ button {
   /* takes three columns */
   grid-column: span 3;
 }
-/* * */
+
+/* *FOOTER */
+.footer {
+  background-color: var(--card-color);
+}
+
+/* *FOOTER CONTAINER AND FOOTER TOP */
+.footer__container,
+.footer__top {
+  /* display grid, we're gonna control them with grid */
+  display: grid;
+  /* row separation */
+  row-gap: var(--sp-1-5);
+}
+
+/* *FOOTER TITLE */
+.footer__title {
+  /* separates from social icons */
+  margin-bottom: var(--sp-0-75);
+}
+
+/* *FOOTER LIST (icons)*/
+.footer__social {
+  /* display flex, icons are placed next to each othet */
+  display: flex;
+  justify-content: center;
+  /* align horizontally */
+  align-items: center;
+  /* separation between icos */
+  gap: var(--sp-1-5);
+}
+
+/* *FOOTER LINK */
+.footer__link {
+  /* same as icons  */
+  display: flex;
+  /* align vertically */
+  justify-content: center;
+  /* align horizontally */
+  align-items: center;
+  /* sizing up */
+  width: var(--sp-2-5);
+  height: var(--sp-2-5);
+  color: var(--bg-color);
+  background-color: var(--title-color);
+  /* rounding them up */
+  border-radius: 50%;
+  font-size: 1.75rem;
+  transition: background-color .4s ease-in-out;
+}
+
+/* *FOOTER LINK HOVER */
+.footer__link:hover {
+  /* when curson hovers */
+  background-color: var(--primary-color);
+  
+}
+
+/* *FOOTER BOTTOM */
+.footer__bottom {
+  text-align: center;
+}
 /* * */
 /* * */
