@@ -361,4 +361,111 @@ button {
   left: 0;
 }
 
-/* *NOTIFICATION */
+
+/* *MAIN */
+/* *PRODUCTS */
+.products__title{
+  /* margin bottom to move downwards the image from title */
+  margin-bottom: var(--sp-2);
+}
+
+.product {
+  /* everything defined inside => article class="product" and overflows doesnt show up*/
+  overflow: hidden;
+}
+
+/* *PRODUCT IMAGE */
+.product__image {
+  /* reducing image */
+  padding: var(--sp-1);
+  background-color: var(--card-color);
+}
+
+/* *PRODUCT IMAGE IMG */
+.product__image img {
+  /* when selecting the image, image goes up */
+  transition: transform .3s ease-in-out;
+}
+
+/* *PRODUCT IMAGE HOVER */
+.product:hover img {
+  /* whenever the mouse hovers around or inside the image a transform will be applied into the y axe */
+  transform:  translateY(-15px);
+}
+
+/* *PRODUCT CONTENT, INFORMATION */
+/* *PRODUCT CONTENT */
+.product__content {
+  /* since buy button will be moved, position relative is needed */
+  position: relative;
+  /* this will suit leftover cards price, stock, title*/
+  display: grid;
+  /* we're gonna have a repeat(3 columns, 1fraction) we have 3 items price, stock, name*/
+  grid-template-columns: repeat(3, 1fr);
+  /* centering items (price, stock, name), not necesity of flex 'cause we're using grid */
+  align-items: center;
+  background-color: var(--bg-color);
+  /* padding so it wont be too close to borders */
+  padding: var(--sp-1-5);
+  /* min width, it wont increase too much */
+  min-width: 109px;
+}
+
+/* *ADD BUTTON */
+.product__btn {
+  /* since we're moving the button, but we need the full content to remain in its place */
+  position: absolute;
+  /* has to be at top-right*/
+  top: 0;
+  /* a bit of separation from rigth border */
+  right: var(--sp-1-5);
+  /* width and height will help us to square the button */
+  width: 45px;
+  height: 45px;
+  background-color: var(--bg-color);
+  /* this creates a square shadow around the button */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10%);
+  /* rounds up the icon */
+  border-radius: 50%;
+  /* since button is too close, adding a transform ups the button at 50% between product__image and product__content */
+  transform: translateY(-50%);
+  /* icon centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--medium-font);
+  /* change your color when mouse hovers over you */
+  transition: background-color .4s ease-in-out, color .4s ease-in-out;
+  /* border: 1px solid red; */
+}
+
+/* *STYLING TRANSITION */
+.product__btn:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+
+/* adjusting price, stock and name (title) to take as much colums as they need */
+/* *PRODUCT PRICE */
+.product__price {
+  /* takes only one column */
+  grid-column: span 1;
+}
+
+/* *PRODUCT STOCK */
+.product__stock {
+  /* takes two columns */
+  grid-column: span 2;
+  /* place at the end of the grid*/
+  justify-self: self-end;
+}
+
+/* *PRODUCT NAME (TITLE) */
+.product__title {
+  /* takes three columns */
+  grid-column: span 3;
+}
+/* * */
+/* * */
+/* * */
