@@ -1,86 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- HEAD -->
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart</title>
-    <!--  -->
-    <!-- GOOGLE FONTS -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- BOX ICONS -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <!-- STYLES SHEET -->
-    <link rel="stylesheet" href="assests/css/style.css" />
-  </head>
+<!-- HEAD -->
 
-  <!-- BODY -->
-  <body>
-    <h1>Shopping list</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart</title>
+  <!--  -->
+  <!-- GOOGLE FONTS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- BOX ICONS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!-- STYLES SHEET -->
+  <link rel="stylesheet" href="assests/css/style.css" />
+</head>
 
-    <!-- LOADER -->
-    <div class="loader loader--hidden">
-      <div class="loader__container">
-        <span></span>
-      </div>
+<!-- BODY -->
+
+<body>
+  <h1>Shopping list</h1>
+
+  <!-- LOADER -->
+  <div class="loader loader--hidden">
+    <div class="loader__container">
+      <span></span>
     </div>
+  </div>
 
-    <!-- HEADER -->
-    <header class="header">
-      <!-- NAVEGATION -->
-      <nav class="nav container">
-        <!-- LOGO -->
-        <a href="#" class="nav__logo">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 48.92 56.48"
-            class="logo--icon"
-          >
-            <path
-              fill="currentColor"
-              d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z"
-            ></path>
-          </svg>
-        </a>
-        <!-- NAV MENU -->
-        <div class="nav__menu">
-          <!-- CLOSE BUTTON -->
-          <button type="button" class="nav__btn btn--close">
-            <i class="bx bx-x"></i>
-          </button>
-          <!-- NAVIGATION LIST -->
-          <ul class="nav__list">
-            <li class="nav__items">
-              <a href="#" class="nav__link">Start</a>
-            </li>
-            <li class="nav__items">
-              <a href="#" class="nav__link">Products</a>
-            </li>
-          </ul>
+  <!-- HEADER -->
+  <header class="header">
+    <!-- NAVEGATION -->
+    <nav class="nav container">
+      <!-- LOGO -->
+      <a href="#" class="nav__logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="logo--icon">
+          <path fill="currentColor"
+            d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+          </path>
+        </svg>
+      </a>
+      <!-- NAV MENU -->
+      <div class="nav__menu">
+        <!-- CLOSE BUTTON -->
+        <button type="button" class="nav__btn btn--close">
+          <i class="bx bx-x"></i>
+        </button>
+        <!-- NAVIGATION LIST -->
+        <ul class="nav__list">
+          <li class="nav__items">
+            <a href="#" class="nav__link">Start</a>
+          </li>
+          <li class="nav__items">
+            <a href="#" class="nav__link">Products</a>
+          </li>
+        </ul>
+      </div>
+      <!-- NAV BUTTONS -->
+      <div class="nav__buttons">
+        <!-- CART BUTTON-->
+        <button type="button" class="nav__btn btn--cart">
+          <i class="bx bxs-shopping-bag"></i>
+          <!-- notification when a product is added to the cart -->
+          <span class="notify">0</span>
+        </button>
+
+        <!-- MENU BUTTON-->
+        <button type="button" class="nav__btn btn--menu">
+          <i class="bx bx-grid-alt"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products section">
+      <!-- PRODUCTS TITLE -->
+      <h2 class="products__title section--title">Products</h2>
+        <!-- PRODUCTS CONTAINER -->
+        <div class="products__container container">
+          <article class="product">
+            <!-- PRODUCT IMAGE -->
+            <div class="product__image">
+              <img src="https://res.cloudinary.com/duu1imwxs/image/upload/v1677270464/eCommerce/shirt1_prckre.png"
+                alt="product 1">
+            </div>
+            <!-- PRODUCT CONTENT -->
+            <div class="product__content" type="button">
+              <!-- ADD BUTTON -->
+              <button class="product__btn add--to--cart">
+                <i class='bx bx-cart'></i>
+              </button>
+              <!-- PRODUCT PRICE -->
+              <span class="product__price">$10</span>
+              <!-- PRODUCT STOCK -->
+              <span class="product__stock">Available: 3</span>
+              <!-- ARTICLE NAME -->
+              <h3 class="product__title">Regular T-shirt</h3>
+            </div>
+          </article>
         </div>
-        <!-- NAV BUTTONS -->
-        <div class="nav__buttons">
-          <!-- CART BUTTON-->
-          <button type="button" class="nav__btn btn--cart">
-            <i class="bx bxs-shopping-bag"></i>
-            <!-- notification when a product is added to the cart -->
-            <span class="notify">0</span>
-          </button>
 
-          <!-- MENU BUTTON-->
-          <button type="button" class="nav__btn btn--menu">
-            <i class="bx bx-grid-alt"></i>
-          </button>
-        </div>
-      </nav>
-    </header>
+    </section>
 
-    <!-- FOOTER -->
-  </body>
+  </main>
+
+
+  <!-- FOOTER -->
+</body>
+
 </html>
