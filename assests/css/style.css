@@ -593,7 +593,7 @@ button {
 /* *CART BODY */
 .cart__body {
   /* padding to all directions */
-  padding: var(--sp-1-5);
+  padding: var(--sp-1);
   /* when more cards are added inside cart__doby a scroll bar appears so all items can be displayed */
   overflow-y: auto;
 }
@@ -605,10 +605,92 @@ button {
   /*  */
   align-items: center;
   /* cart__btn and text separate from each other */
-  gap: var(--sp-1);
+  gap: var(--sp-0-51);
   /* both btn and text size up */
   font-size: var(--normal-font);
 }
+
+/* *ARTICLES ADDED TO CART */
+.article {
+  /* 2 columns => image 80px, remaining column content (title, price, buttons and trash */
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  /* it has just one row of one fraction */
+  grid-template-rows: 1fr;
+  /* separates image from information */
+  column-gap: var(--sp-1);
+  /*  margin bottom so it can pull apart from articles to be added */
+  /* for mobile versions */
+  margin-bottom: var(--sp-1);
+}
+
+/* *ARTICLE IMAGE */
+/* styling content only */
+.article__image {
+ position: relative;
+ /* width and height must be the same so they fit grid-template-columns: 80px */
+ width: 80px;
+ height: 80px;
+ /* this is only if image moves or gets out of its grid */
+ overflow: hidden;
+ border: 1px solid var(--card-color);
+ /* align it so it gets centered betwen text and quantity */
+ /* align yourself to the center */
+ align-self: center;
+}
+
+/* *ARTICLE IMAGE */
+/* styling image */
+.article__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* *ARTICLE CONTENT */
+.article__content {
+  /* starting grid */
+  display: grid;
+  /* centering the content */
+  align-items: center;
+  /* create 4 columns of 1 fraction each */
+  /* article: name, price, quantity and delete */
+  grid-template-columns: repeat(4, 1fr);
+  /* create 2 rows => first one of 1 fraction and the second one of 30px */
+  grid-template-rows: 1fr 30px;
+}
+
+/* *ARTICLE TITLE */
+.article__title {
+  /* fits 4 columns */
+  grid-column: span 4;
+}
+
+/* *ARTICLE QUANTITY */
+.article__quantity {
+  /* fits 2 columns */
+  grid-column: span 2;
+  /* display flex to adjust its content */
+  display: flex;
+  align-items: center;
+  /* gap between elements */
+  gap: var(--sp-1);
+  /* center yourself to center */
+  /* it centers between the two columns */
+  justify-self: center;
+}
+
+/* *TRASH BUTTON */
+.remove-from-cart {
+  font-size: 1.25rem;
+  /* centering in the column */
+  display: flex;
+  align-items: center;
+  /* move yourself at the end */
+  justify-self: flex-end;
+}
+
 
 /* *CART FOOTER */
 .cart__footer {
@@ -652,5 +734,40 @@ button {
   /* padding to all sides */
   padding: var(--sp-1);
 }
+
+
+
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
 /* * */
 /* * */
