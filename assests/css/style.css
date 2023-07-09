@@ -528,5 +528,129 @@ button {
 .footer__bottom {
   text-align: center;
 }
+
+/* *CART */
+.cart {
+  /* position fixed, for mobile devices it'll show up like header height*/
+  position: fixed;
+  /* cart will show up from right  */
+  bottom: var(--header-height);
+  right: 0;
+  /* for mobile devices it'll have a 100% width */
+  max-width: 375px;
+  width: 100%;
+  /* depending on viewport height, cart's height will be calculated with header's height*/
+  /* cart will cover everything execept header */
+  height: calc(100vh - var(--header-height));
+  background-color: var(--bg-color);
+  z-index: var(--z-fixed);
+  /* transiton will show up from right */
+  transition: right .5s ease-in-out;
+}
+
+/* *CART CONTAINER */
+.cart__container {
+  display: grid;
+  /* 1fraction to all columns */
+  grid-template-columns: 1fr;
+  /* we need different  rows with differnt sizes*/
+  /* header, content, bottom buttons */
+  grid-template-rows: 10% 70% 20%;
+  height: 100%;
+}
+
+/* *CART HEADER */
+.cart__header {
+  /* using grid to separate header from h3 button */
+  display: grid;
+  /* creation of three columns */
+  /* title, x button, blank space */
+  grid-template-columns: 2fr 2fr .5fr;
+  /* centering items */
+  align-items: center;
+  /* it takes its full width */
+  width: 100%;
+  /* top, right, bottom, left */
+  padding: var(--sp-1-5) 0 0 var(--sp-1);
+}
+
+/* *CART TITLE */
+.cart__title {
+  /* cart__title takes 2 colums */
+  grid-column: span 2;
+}
+
+/* *CART BUTTON */
+.cart__btn.btn--close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 3px;
+  width: 3px; */
+  font-size: var(--medium-font);
+}
+
+/* *CART BODY */
+.cart__body {
+  /* padding to all directions */
+  padding: var(--sp-1-5);
+  /* when more cards are added inside cart__doby a scroll bar appears so all items can be displayed */
+  overflow-y: auto;
+}
+
+/* *CART EMPTY */
+.cart__empty {
+  /* shows when no items are added */
+  display: flex;
+  /*  */
+  align-items: center;
+  /* cart__btn and text separate from each other */
+  gap: var(--sp-1);
+  /* both btn and text size up */
+  font-size: var(--normal-font);
+}
+
+/* *CART FOOTER */
+.cart__footer {
+  /* cart footer separated by 3 rows */
+  display: grid;
+  /* 4 colums 1 fraction each */
+  grid-template-columns: repeat(4, 1fr);
+  /* to define rows => 2 rows, 1fraction each */
+  grid-template-rows: repeat(2, 1fr);
+  /* centering elements vertically, items downwards*/
+  align-items: center;
+  background-color: var(--card-color);
+  /* padding to all directions */
+  padding: var(--sp-1);
+  /* gap between rows */
+  row-gap: var(--sp-1);
+}
+
+/* *CART COUNTER AND CART TOTAL*/
+/* buy button will be downwards and counter and total separated to each other */
+.cart__count {
+  /* grid-colum => it takes 2 columns */
+  grid-column: span 2;
+  font-size: var(--small-font);
+}
+
+.cart__total {
+  /* grid-colum => it takes 2 columns */
+  grid-column: span 2;
+  /* align yourself at the end */
+  justify-self: flex-end;
+}
+
+/* *BUY BUTTON*/
+/* buy button will be rectangle and black */
+.cart__btn.btn--buy {
+  /* take all four colums */
+  grid-column: span 4;
+  background-color: var(--title-color);
+  color: var(--bg-color);
+  /* padding to all sides */
+  padding: var(--sp-1);
+}
 /* * */
 /* * */
