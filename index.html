@@ -20,8 +20,6 @@
 <!-- BODY -->
 
 <body>
-  <h1>Shopping list</h1>
-
   <!-- LOADER -->
   <div class="loader loader--hidden">
     <div class="loader__container">
@@ -107,8 +105,52 @@
 
     </section>
 
-  </main>
+    <!-- CART -->
+    <div class="cart">
+      <!-- CART CONTAINER -->
+      <div class="cart__container">
+        <!-- CART HEADER -->
+        <div class="cart__header">
+          <!-- CART TITLE -->
+          <h3 class="cart__title">Shoppint cart</h3>
+          <!-- CART BUTTON -->
+          <button type="button" class="cart__btn btn--close">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+        <!-- CART BODY -->
+        <div class="cart__body">
+          <!-- CART EMPTY ICON AND NOTIFICATION-->
+          <div class="cart__empty">
+            <i class='bx bx-cart'></i>
+            <p class="cart__empty--text">
+              Empty cart
+            </p>
+          </div>
+        </div>
+        <!-- CART FOOTER -->
+        <div class="cart__footer">
+          <!-- CART COUNTER -->
+          <div class="cart__count">
+            <!-- ARTICLES COUNTER -->
+            <span class="cart__count--text">Articles</span>
+            <!-- ITEMS COUNTER -->
+            <span class="cart__count--item">0</span>
+          </div>
+          <!-- CART TOTAL -->
+          <div class="cart__total">
+            <!-- ARTICLES TOTAL -->
+            <span class="cart__total--text">Total</span>
+            <!-- ITEMS TOTAL -->
+            <span class="cart__total--item">$0</span>
+          </div>
+          <!-- BUY BUTTON -->
+          <button type="button" class="cart__btn btn--buy">Buy</button>
+        </div>
+      </div>
+    </div>
 
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer section">
@@ -129,24 +171,28 @@
           <!-- FOOTER SOCIAL NETWORKD -->
           <ul class="footer__social">
             <!-- FOOTER ITEM -->
+            <!-- FACEBOOK -->
             <li class="footer__item">
               <!-- FACEBOOK -->
               <a href="#" class="footer__link">
                 <i class='bx bxl-facebook'></i>
               </a>
             </li>
+            <!-- INSTAGRAM -->
             <li class="footer__item">
               <!-- INSTAGRAM -->
               <a href="#" class="footer__link">
                 <i class='bx bxl-instagram'></i>
               </a>
             </li>
+            <!-- GITHUB -->
             <li class="footer__item">
               <!-- GITHUB -->
               <a href="#" class="footer__link">
                 <i class='bx bxl-github'></i>
               </a>
             </li>
+            <!-- LINKEDIN -->
             <li class="footer__item">
               <!-- LINKEDIN -->
               <a href="#" class="footer__link">
@@ -155,7 +201,9 @@
             </li>
           </ul>
         </div>
+
       </div>
+
       <!-- FOOTER BOTTOM -->
       <div class="footer__bottom">
         <!-- FOOTER TEXT -->
@@ -165,6 +213,7 @@
       </div>
     </div>
   </footer>
+
 </body>
 
 </html>
