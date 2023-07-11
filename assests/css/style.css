@@ -198,6 +198,7 @@ button {
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(1);
     opacity: 0;
@@ -364,7 +365,18 @@ button {
 
 /* *MAIN */
 /* *PRODUCTS */
-.products__title{
+
+/* *PRODUCTS__CONTAINER RESPONSIVE DESIGN */
+/* THIS REPONSIVENESS PROPERTIES WERE ADDED AFTER FINISHING WITH MOBILE FIRST */
+.products__container {
+  /* grid for container which evolves all cards without specifing specific columns numbers, insted we're using a specific keyword which introduces coluns automatically*/
+  display: grid;
+  /* repeat(calculate father's width, minmax(250px, 1fr) */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--sp-2);
+}
+
+.products__title {
   /* margin bottom to move downwards the image from title */
   margin-bottom: var(--sp-2);
 }
@@ -390,7 +402,7 @@ button {
 /* *PRODUCT IMAGE HOVER */
 .product:hover img {
   /* whenever the mouse hovers around or inside the image a transform will be applied into the y axe */
-  transform:  translateY(-15px);
+  transform: translateY(-15px);
 }
 
 /* *PRODUCT CONTENT, INFORMATION */
@@ -459,6 +471,7 @@ button {
   grid-column: span 2;
   /* place at the end of the grid*/
   justify-self: self-end;
+  font-size: var(--small-font);
 }
 
 /* *PRODUCT NAME (TITLE) */
@@ -521,7 +534,7 @@ button {
 .footer__link:hover {
   /* when curson hovers */
   background-color: var(--primary-color);
-  
+
 }
 
 /* *FOOTER BOTTOM */
@@ -535,7 +548,7 @@ button {
   position: fixed;
   /* cart will show up from right  */
   bottom: var(--header-height);
-  right: 0;
+  right: -100%;
   /* for mobile devices it'll have a 100% width */
   max-width: 375px;
   width: 100%;
@@ -547,6 +560,22 @@ button {
   /* transiton will show up from right */
   transition: right .5s ease-in-out;
 }
+
+
+/* *RESPONSIVE DESIGN */
+
+/* *SHOW CART */
+.show--cart {
+  right: 0;
+}
+
+
+
+/* * */
+/* * */
+/* * */
+/* * */
+
 
 /* *CART CONTAINER */
 .cart__container {
@@ -627,16 +656,16 @@ button {
 /* *ARTICLE IMAGE */
 /* styling content only */
 .article__image {
- position: relative;
- /* width and height must be the same so they fit grid-template-columns: 80px */
- width: 80px;
- height: 80px;
- /* this is only if image moves or gets out of its grid */
- overflow: hidden;
- border: 1px solid var(--card-color);
- /* align it so it gets centered betwen text and quantity */
- /* align yourself to the center */
- align-self: center;
+  position: relative;
+  /* width and height must be the same so they fit grid-template-columns: 80px */
+  width: 80px;
+  height: 80px;
+  /* this is only if image moves or gets out of its grid */
+  overflow: hidden;
+  border: 1px solid var(--card-color);
+  /* align it so it gets centered betwen text and quantity */
+  /* align yourself to the center */
+  align-self: center;
 }
 
 /* *ARTICLE IMAGE */
@@ -735,17 +764,69 @@ button {
   padding: var(--sp-1);
 }
 
+/* *RESPONSIVENESS DESIGN */
+/* THESE PROPERTIES WERE ADDED AFTER MOBILE FIRST */
+
+/* *MEDIA QUERIES */
+/* the minimun width to be applied these rules is 768px */
+@media (min-width: 768px) {
+  :root {
+    --header-height: 75px;
+  }
+
+  /* for bigger screens */
+  .header {
+    /* header will show at top screen */
+    top: 0;
+    bottom: unset;
+  }
+
+  .nav__list {
+    /* centering elements start and products*/
+    display: flex;
+    align-items: center;
+  }
+
+  /* hiding buttons close and  menu */
+  .nav__menu .btn--close,
+  .btn--menu {
+    display: none;
+  }
+
+  .main {
+    /* making this change because nav bar is hiding h2 products */
+    /* this shows h2 products */
+    padding-top: var(--header-height);
+  }
+
+  /* *PRODUCT TITLE */
+  .product__title {
+    /* in bigger screens the product name is too big */
+    font-size: var(--small-font);
+  }
+
+  /* *CART */
+  /* when showing cart, for mobile devices nav-bar appears at bottom but for bigger screens nav-bar appears at top and it has a space at bottom of cart*/
+  .cart {
+    /* cart takes full space and goes straight to header */
+    top: var(--header-height);
+  }
+
+}
+
+/* *since .section--title, .container only have 1rem in border it's not filling the full screen */
+/* when the screen fulfills 1024px, such 1rem has to fill the screen automatically */
+@media (min-width: 1024px) {
+  .section--title,
+  .container {
+    /* bigger screens top-bottom, left-right*/
+    /* all items will be centered automatically */
+    margin: 0 auto;
+  }
+}
 
 
-/* * */
-/* * */
-/* * */
-/* * */
-/* * */
-/* * */
-/* * */
-/* * */
-/* * */
+
 /* * */
 /* * */
 /* * */
