@@ -257,9 +257,9 @@ button {
     /* this menu will scrolls with user */
     position: fixed;
     /* this menu will appear upwards */
-    bottom: var(--header-height);
+    bottom: -100%;
     /* it will start from left */
-    left: -100%;
+    left: 0;
     /* it will fit full width */
     width: 100%;
     /* calculated value, it will increase depending on its max content */
@@ -272,7 +272,7 @@ button {
     z-index: var(--z-fixed);
     /* menu will appear from left so cart can appear from right*/
     /* appear from left with .5secons and ease in out (entrada por salida) */
-    transition: left 0.5s ease-in-out;
+    transition: bottom .4s ease-in-out;
   }
 }
 
@@ -359,7 +359,7 @@ button {
 /* *SHOW MENU */
 /* this class will allow us to show button */
 .show--menu {
-  left: 0;
+  bottom: var(--header-height);
 }
 
 
