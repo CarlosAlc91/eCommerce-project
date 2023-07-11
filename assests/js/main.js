@@ -25,5 +25,6 @@ showCart()
 /*
 * PRODUCTS 
 */
-/* await => top level await */
+/* await => top level await 
+*/
 products(await getProducts())
