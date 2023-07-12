@@ -6,6 +6,7 @@ import showMenu from "./components/showMenu.js"
 import showCart from "./components/showCart.js"
 import products from "./components/products.js"
 import getProducts from "./helpers/getProducts.js"
+import cart from "./components/cart.js"
 
 /*
 * UI ELEMENTS 
@@ -27,4 +28,10 @@ showCart()
 */
 /* await => top level await 
 */
-products(await getProducts())
+const {db, printProducts} = products(await getProducts())
+
+/* 
+* SHOPPING CART
+*/
+
+cart(db, printProducts)
