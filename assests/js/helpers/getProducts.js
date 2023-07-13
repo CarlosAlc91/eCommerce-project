@@ -3,7 +3,8 @@
 
 async function getProducts() {
   /* regular way to information with .then and .catch using promises */
- /*  return window.fetch('https://ecommercebackend.fundamentos-29.repl.co/')
+ /*  return window.fetch('https://services-academlo-shopping.onrender.com/
+')
     .then((res) => res.json())
     .then((data) => data)
     .catch((err) => { console.log(err) }) */
@@ -12,7 +13,7 @@ async function getProducts() {
   /* and use try and catch for errors */
   
   try {
-    const res = await window.fetch('https://ecommercebackend.fundamentos-29.repl.co/')
+    const res = await window.fetch('https://services-academlo-shopping.onrender.com/')
 
     /* we get a second promise, we have to convert it so js can read it */
     const data = await res.json()
