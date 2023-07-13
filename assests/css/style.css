@@ -10,6 +10,12 @@
   --title-color: hsl(0, 0%, 10%);
   --bg-color: hsl(0, 0%, 100%);
   --card-color: hsl(0, 0%, 90%);
+  /* *DARK MODE */
+  --body-color-dark: hsl(220, 13%, 18%);
+  --bg--color-dark: hsl(220, 10%, 24%);
+  --card-color-dark: hsl(219, 8%, 34%);
+  --text-color-dark: hsl(0, 0%, 88%);
+  --title-color-dark: hsl(0, 0%, 100%);
 
   /* fonts */
   --body-font: "Open Sans", sans-serif;
@@ -101,6 +107,87 @@ body {
   font-weight: var(--font-normal);
   color: var(--text-color);
   background-color: var(--body-color);
+}
+
+/* *DARK MODE */
+body.dark {
+  background-color: var(--body-color-dark);
+  
+}
+
+
+body.dark .header{
+  background-color: var(--card-color-dark);
+  
+}
+
+body.dark  .nav__link{
+  color: var(--text-color-dark);
+}
+
+body.dark .btn--cart, 
+.btn--menu,
+.btn--dark, .btn--close, 
+.remove-from-cart, 
+.article--plus, 
+.article--minus{
+  color: var(--text-color-dark);
+}
+
+body.dark .section--title {
+  color: var(--title-color-dark);
+}
+
+body.dark .product__content{
+  background-color: var(--card-color-dark);
+}
+
+body.dark .add--to--cart {
+  background-color: var(--bg--color-dark);
+  color: var(--title-color-dark);
+}
+
+body.dark .product__price, 
+.product__stock{
+  color: var(--text-color-dark);
+}
+
+body.dark .product__title {
+  color: var(--title-color-dark);
+}
+
+body.footer .section{
+  background-color: var(--bg--color-dark);
+}
+
+body.dark .cart {
+  background-color: var(--body-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark .cart__header {
+  background-color: var(--card-color-dark);
+}
+
+body.dark .cart__title {
+  color: var(--title-color-dark);
+}
+
+body.dark .cart__footer {
+  background-color: var(--card-color-dark);
+}
+
+body.dark .article__title {
+  color: var(--title-color-dark);
+}
+
+body.dark .footer {
+  background-color: var(--card-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark .footer__title {
+  color: var(--title-color-dark);
 }
 
 /* *SETTING LINKS OR ANCHORS */
@@ -329,7 +416,7 @@ button {
 /* *CART BUTTON */
 /* btn--cart and notification will remain together */
 /* position relative, bag backwards */
-.btn--cart {
+.btn--cart{
   position: relative;
 }
 
@@ -794,7 +881,8 @@ button {
   }
 
   /* hiding buttons close and  menu */
-  .nav__menu .btn--close,
+  .nav__menu 
+  .btn--close,
   .btn--menu {
     display: none;
   }
